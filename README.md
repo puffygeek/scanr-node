@@ -11,7 +11,7 @@ dead simple. fast ocr client
 Simply install via [npm](https://npmjs.org/):
 
 ```javascript
-npm install scanr-node
+npm install scanr
 ```
 Load it and you're ready to go!
 
