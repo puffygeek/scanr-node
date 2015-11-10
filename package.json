@@ -1,28 +1,24 @@
 {
-  "name": "dead-simple-crypt",
+  "name": "scanr-node",
   "version": "0.0.1",
-  "description": "simply encrypt and decrypt things",
+  "description": "image to text api",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sagivo/accept-bitcoin"
+    "url": "https://github.com/puffygeek/scanr-node"
   },
   "keywords": [
-    "node",
-    "dead-simple-crypt",
-    "dead-simple",
-    "simple-crypt",
-    "encrypt",
-    "dycrypt"
+    "scanr"
   ],
   "engines": {
     "node": ">= 0.8.0"
   },
-  "author": "sagiv ofek",
+  "author": "Sagiv Ofek",
   "license": {
     "type": "MIT",
     "url": "http://github.com/assaf/zombie/blob/master/MIT-LICENSE"
   },
   "dependencies": {
+    "request" : "*"
   }
 }

@@ -1,31 +1,20 @@
-(function() {
-  var crypto = require('crypto');
-  var default_pass = 'ENTER_YOUR_DEFAULT_PASSWORD';
+module.exports = function(token, options) {
+  var lang = (options && options.lang) ? options.lang || 'eng';
+  var url = 'https://api.scanr.xyz/ocr?token=' + token + "&lang=" +lang;
 
-  module.exports = {
-    encrypt: function(text, pass) {
-      var cipher, crypted;
-      if (pass == null) {
-        pass = default_pass;
+  return {
+    ocr: function(path, cb) {
+      var request = require('request');
+      var fs = require('fs');
+
+      if (path.indexOf('http') == 0)
+        request.post({url: url, form: {url: path}}, process_response);
+      else
+        request.post({url: url, formData: {file: fs.createReadStream(path)}}, process_response);
+
+      function process_response(err, httpResponse, body){
+        cb(err, body ? JSON.parse(body) : null);
       }
-      cipher = crypto.createCipher("aes-256-cbc", pass);
-      crypted = cipher.update(text, "utf8", "hex");
-      crypted += cipher.final("hex");
-      return crypted;
-    },
-    decrypt: function(text, pass) {
-      var dec, decipher;
-      if (pass == null) {
-        pass = default_pass;
-      }
-      decipher = crypto.createDecipher("aes-256-cbc", pass);
-      dec = decipher.update(text, "hex", "utf8");
-      dec += decipher.final("utf8");
-      return dec;
-    },
-    gui: function() {
-      return Math.random().toString(36).substring(2);
     }
-  };
-
-}).call(this);
+  }
+}

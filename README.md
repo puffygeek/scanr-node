@@ -1,44 +1,28 @@
-#Dead Simple Crypt
+#scanR Node.js client
 
-dead simple. fast. light  
+dead simple. fast ocr client  
 
-  - No need for heavy libraries. Using aes-256-cbc protocol. 
+  - No need for heavy libraries.
   - Simple to use.
   - Customize it easily. 
-  - Only 2 methodes `encrypt(string, optionalPass)` and `decrypt(string, optionalPass)`
-
 
 ##Get Started
 
 Simply install via [npm](https://npmjs.org/):
 
 ```javascript
-npm install dead-simple-crypt
+npm install scanr-node
 ```
 Load it and you're ready to go!
-```javascript
-var deadSimpleCrypt = require('dead-simple-crypt');
-```
-
-##Examples
 
 ```javascript
-var plain = "I see dead people!";
-var blob = deadSimpleCrypt.encrypt(plain); //your encrypted string
-deadSimpleCrypt.decrypt(blob); //back to original string
+var scanr = require('scanr')('YOUR_TOKEN', {lang: 'eng'});
+scanr.ocr('https://i.imgur.com/fYY6P4Y.png', function(err, text){
+  console.log(text);
+}
 ```
 
-or, with optional password:
-```javascript
-var pass = 'some password';
-var plain = "I see dead people!"; 
-var blob = deadSimpleCrypt.encrypt(plain, pass); //your encrypted string
-deadSimpleCrypt.decrypt(blob, pass); //back to original string
-```
-
-
-##Disclosure
-This is best for simple use needs. In case you need more complicate solution do your research before.  
+[more docs](http://docs.scanr.xyz)
 
 ##Contribute
 Please do. Fork it, star it, share it and add your code to the project. Help others.  
