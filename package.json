@@ -1,6 +1,6 @@
 {
   "name": "scanr",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "image to text api",
   "main": "index.js",
   "repository": {

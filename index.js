@@ -1,5 +1,5 @@
 module.exports = function(token, options) {
-  var lang = (options && options.lang) ? options.lang || 'eng';
+  var lang = (options && options.lang) ? options.lang : 'eng';
   var url = 'https://api.scanr.xyz/ocr?token=' + token + "&lang=" +lang;
 
   return {
