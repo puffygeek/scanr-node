@@ -15,8 +15,7 @@
   },
   "author": "Sagiv Ofek",
   "license": {
-    "type": "MIT",
-    "url": "http://github.com/assaf/zombie/blob/master/MIT-LICENSE"
+    "type": "Apache",
   },
   "dependencies": {
     "request" : "*"
