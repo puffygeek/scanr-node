@@ -1,6 +1,6 @@
 {
   "name": "scanr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "image to text api",
   "main": "index.js",
   "repository": {
@@ -15,7 +15,7 @@
   },
   "author": "Sagiv Ofek",
   "license": {
-    "type": "Apache",
+    "type": "Apache"
   },
   "dependencies": {
     "request" : "*"
